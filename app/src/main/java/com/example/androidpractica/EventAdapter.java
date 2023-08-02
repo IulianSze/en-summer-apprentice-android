@@ -1,0 +1,71 @@
+package com.example.androidpractica;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.SearchView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
+
+    EventDto[] eventDto;
+    Context context;
+
+    public EventAdapter(EventDto[] eventDto,MainActivity activity) {
+        this.eventDto = eventDto;
+        this.context = activity;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.events_list,parent,false);
+        ViewHolder viewHolder = new ViewHolder(view);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        final EventDto myEventDtoList = eventDto[position];
+        holder.textViewName.setText(myEventDtoList.getEventName());
+        holder.textViewDescription.setText(myEventDtoList.getEventDescription());
+        holder.eventImage.setImageResource(myEventDtoList.getEventImage());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, myEventDtoList.getEventName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return eventDto.length;
+    }
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView eventImage;
+        TextView textViewName;
+        TextView textViewDescription;
+        SearchView searchView;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            eventImage = itemView.findViewById(R.id.imageview);
+            textViewName = itemView.findViewById(R.id.textName);
+            textViewDescription = itemView.findViewById(R.id.textdescription);
+            /*searchView=itemView.findViewById(R.id.search);*/
+
+        }
+    }}
