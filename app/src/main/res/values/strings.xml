@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Cumpara bilete</string>
+    <string-array name="ticketCategories">
+        <item>Standard</item>
+        <item>VIP</item>
+    </string-array>
 </resources>

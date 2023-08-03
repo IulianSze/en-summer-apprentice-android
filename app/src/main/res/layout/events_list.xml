@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="wrap_content">
-
-
 
     <androidx.cardview.widget.CardView
         app:cardElevation="10dp"
@@ -15,10 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#FF3700B3">
+        </LinearLayout>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <ImageView
                 android:layout_margin="10dp"
@@ -31,7 +38,7 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/textName"
@@ -49,8 +56,40 @@
                     android:text="Event Description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/eventType"
+                    android:layout_margin="10dp"
+                    android:text="Event type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
+                <TextView
+                    android:id="@+id/eventStartDate"
+                    android:layout_margin="10dp"
+                    android:text="Start date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/eventEndDate"
+                    android:layout_margin="10dp"
+                    android:text="End date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <RelativeLayout android:layout_height="match_parent"
+                    android:layout_width="match_parent">
+
+                    <Button
+                        android:id="@+id/placeOrdBt"
+                        style="@style/Widget.MaterialComponents.FloatingActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center|right"
+                        android:layout_marginRight="25dp"
+                        android:text="Buy now" />
+
+                </RelativeLayout>
             </LinearLayout>
+
 
         </LinearLayout>
 

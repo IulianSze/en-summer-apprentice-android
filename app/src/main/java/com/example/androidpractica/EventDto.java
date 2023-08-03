@@ -1,5 +1,7 @@
 package com.example.androidpractica;
 
+import java.time.LocalDate;
+
 public class EventDto {
 
 
@@ -13,8 +15,28 @@ public class EventDto {
         private String Venue;
 
         private Integer EventImage;
+        private LocalDate StartDate;
+        private LocalDate EndDate;
 
+    public void setEventId(Integer eventId) {
+        EventId = eventId;
+    }
 
+    public LocalDate getStartDate() {
+        return StartDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        StartDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return EndDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        EndDate = endDate;
+    }
 
     public int getEventId() {
         return EventId;
@@ -70,5 +92,15 @@ public class EventDto {
         EventType = eventType;
         Venue = venue;
         EventImage = eventImage;
+    }
+    public EventDto(Integer eventId, String eventName, String eventDescription, String eventType, String venue, Integer eventImage,LocalDate startDate, LocalDate endDate) {
+        EventId = eventId;
+        EventName = eventName;
+        EventDescription = eventDescription;
+        EventType = eventType;
+        Venue = venue;
+        EventImage = eventImage;
+        StartDate=startDate;
+        EndDate=endDate;
     }
 }
